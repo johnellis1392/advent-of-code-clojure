@@ -1,8 +1,8 @@
 (defproject default "0.1.0-SNAPSHOT"
-  :description "FIXME: write description"
-  :url "http://example.com/FIXME"
-  :license {:name "EPL-2.0 OR GPL-2.0-or-later WITH Classpath-exception-2.0"
-            :url "https://www.eclipse.org/legal/epl-2.0/"}
+  :description "Advent of Code, in Clojure"
+  :url "https://github.com/johnellis1392/advent-of-code-clojure"
+  :license {:name "MIT"}
   :dependencies [[org.clojure/clojure "1.11.1"]
                  [clj-http "3.13.1"]]
-  #_#_:repl-options {:init-ns default.core})
+  :repl-options {:init-ns aoc.core}
+  :main ^:skip-aot aoc.core)

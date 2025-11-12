@@ -23,7 +23,7 @@
     [id (map parse-round rounds)]))
 
 
-(defn read-input [input]
+(defn parse [input]
   (->>
    input
    (str/split-lines)
@@ -58,12 +58,6 @@
    (map process-round)
    (every? valid-round?)))
 
-(let [games (read-input test-input)]
-  (->>
-   games
-   first
-   valid-game?))
-
 (defn part1 [games]
   (->>
    games
@@ -83,13 +77,3 @@
    games
    (map power-set)
    (reduce + 0)))
-
-(defn -main [& _args]
-  (let [filename "input.txt"
-        debug false
-        input (if debug test-input (slurp filename))
-        games (read-input input)]
-    (println "2023 Day 2, Part 1: " (part1 games))
-    (println "2023 Day 2, Part 2: " (part2 games))))
-
-(-main)

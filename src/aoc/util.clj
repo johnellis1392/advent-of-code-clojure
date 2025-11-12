@@ -1,9 +1,10 @@
 (ns aoc.util
   (:require [clj-http.client :as client]
-            [clojure.string :as s]
             [clojure.java.io :refer [file make-parents]]))
 
-(def years (range 2015 2025))
+(def years (set (map str (range 2015 2025))))
+
+(def days (set (map #(format "%02d" %) (range 1 25))))
 
 (def input-dir "input")
 
@@ -21,7 +22,8 @@
 
 (defn url-for
   [year day]
-  (str base-url "/" year "/day/" day))
+  (let [day (if (string? day) (Integer/parseInt day) day)]
+    (str base-url "/" year "/day/" day)))
 
 (defn input-url-for
   [year day]
@@ -30,6 +32,8 @@
 (defn fetch-input-for-day
   [year day]
   (let [input-url (input-url-for year day)]
+    #_(println "Input URL:" input-url)
+    #_(println "Session ID:" session-id)
     (client/get input-url
                 {:headers {"Cookie" (str "session=" session-id)}})))
 

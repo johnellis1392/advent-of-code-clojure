@@ -7,7 +7,7 @@
    [0 -1] [0 1]
    [1 -1] [1 0] [1 1]])
 
-(defn parse-input [input]
+(defn parse [input]
   (->>
    input
    str/trim
@@ -205,9 +205,3 @@
          (map (partial map second))
          (map (partial reduce * 1))
          (reduce + 0))))
-
-(defn -main []
-  (let [filename "input.txt"
-        input (parse-input (slurp filename))]
-    (println "2023 Day 3, Part 1: " (part1 input))
-    (println "2023 Day 3, Part 2: " (part2 input))))

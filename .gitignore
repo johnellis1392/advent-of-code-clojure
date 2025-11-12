@@ -12,3 +12,7 @@ pom.xml.asc
 .hgignore
 .hg/
 .session-id
+/input
+!/input/.gitkeep
+.clj-kondo
+.lsp

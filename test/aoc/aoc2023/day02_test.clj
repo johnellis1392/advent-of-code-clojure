@@ -1,5 +1,5 @@
 (ns aoc.aoc2023.day02-test
-  (:require [aoc.aoc2023.day02 :refer [part1 part2 read-input]]
+  (:require [aoc.aoc2023.day02 :refer [part1 part2 parse]]
             [clojure.test :refer [deftest testing is]]))
 
 (def test-input
@@ -9,9 +9,9 @@ Game 3: 8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red
 Game 4: 1 green, 3 red, 6 blue; 3 green, 6 red; 3 green, 15 blue, 14 red
 Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green")
 
-(deftest day02
+(deftest aoc2023-day02
   (testing "Part 1"
-    (is (= (part1 (read-input test-input)) 8)))
+    (is (= (part1 (parse test-input)) 8)))
 
   (testing "Part 2"
-    (is (= (part2 (read-input test-input)) 2286))))
+    (is (= (part2 (parse test-input)) 2286))))

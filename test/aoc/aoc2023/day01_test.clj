@@ -2,7 +2,7 @@
   (:require [clojure.test :refer [deftest testing is]]
             [aoc.aoc2023.day01 :refer [part1 part2]]))
 
-(deftest day03
+(deftest aoc2023-day03
   (testing "Part 1"
     (let [test-input
           "1abc2

@@ -1,6 +1,8 @@
 (ns aoc.aoc2023.day01
   (:require [clojure.string :as str]))
 
+(defn parse [input] input)
+
 (defn part1 [input]
   (->>
    input
@@ -38,8 +40,3 @@
    (map (fn [line] (str (first line) (last line))))
    (map #(Integer/parseInt %))
    (reduce + 0)))
-
-(defn -main []
-  (let [filename "input.txt"
-        input (slurp filename)]
-    (println "2023 Day 1, Part 2: " (part2 input))))
